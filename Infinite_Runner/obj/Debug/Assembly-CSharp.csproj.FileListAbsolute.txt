@@ -1,0 +1,2 @@
+C:\Users\jensine\Desktop\Infinite Runner\Infinite_Runner\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\jensine\Desktop\Infinite Runner\Infinite_Runner\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
