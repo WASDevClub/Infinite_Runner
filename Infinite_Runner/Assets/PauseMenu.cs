@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour {
     {
         if (Input.GetButtonDown("btnPause"))
         {
-            if (IsGamePaused)
+            if(IsGamePaused)
                 Resume();
             else
                 Pause();
@@ -32,7 +32,7 @@ public class PauseMenu : MonoBehaviour {
     }
     public void Pause()
     {
-        //PauseMenuUI.SetActive(true);
+        PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         IsGamePaused = true;
     }
@@ -42,6 +42,6 @@ public class PauseMenu : MonoBehaviour {
     }
     public void SettingsMenu()
     {
-        SceneManager.LoadScene("Menu");
+        
     }
 }
