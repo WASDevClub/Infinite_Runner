@@ -51,11 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\ChallengeController.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\UI\GameManager.cs" />
      <Compile Include="Assets\Scripts\UI\MenuScript.cs" />
-     <Compile Include="Assets\Scripts\UI\Timer.cs" />
+     <Compile Include="Assets\Scripts\UI\SettingsMenuScript.cs" />
      <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour {
     bool isGameOver = false;
     ChallengeController myChallengeController;
 
+
 	// Use this for initialization
 	void Start () {
         myRigidBody = transform.GetComponent<Rigidbody2D>();
@@ -42,6 +43,8 @@ public class PlayerScript : MonoBehaviour {
     {
         isGameOver = true;
         myChallengeController.GameOver();
+
+        FindObjectOfType<GameManager>().EndGame();
     }
 
     void OnCollisionEnter2D(Collision2D other)
