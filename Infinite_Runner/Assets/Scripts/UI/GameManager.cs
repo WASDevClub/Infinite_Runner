@@ -51,6 +51,11 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 0f;
         gameOverUI.SetActive(true);
     }
+
+    public void RestartGame()
+    {
+
+    }
     //------END GAME OVER CODE------\\ 
 
 

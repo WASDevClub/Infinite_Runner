@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour {
     float posX = 0.0f;
     bool isGameOver = false;
     ChallengeController myChallengeController;
+    
 
 
 	// Use this for initialization
