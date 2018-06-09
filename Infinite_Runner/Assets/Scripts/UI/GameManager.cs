@@ -54,7 +54,9 @@ public class GameManager : MonoBehaviour {
 
     public void RestartGame()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
+        Resume();
     }
     //------END GAME OVER CODE------\\ 
 
