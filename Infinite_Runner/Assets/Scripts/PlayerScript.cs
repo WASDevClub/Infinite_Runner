@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
-    public float jumpPower = 7.5f;
+    public float jumpPower = 3.0f;
     Rigidbody2D myRigidBody;
     bool isGrounded = false;
     float posX = 0.0f;
@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour {
 	void FixedUpdate () {
 		if (Input.GetKey(KeyCode.Space) && isGrounded && !isGameOver)
         {
-            myRigidBody.AddForce(Vector3.up * (jumpPower * myRigidBody.mass * myRigidBody.gravityScale * 20));
+            myRigidBody.AddForce(Vector3.up * (jumpPower * myRigidBody.mass * myRigidBody.gravityScale * 15));
         }
 
         //Hit Check
