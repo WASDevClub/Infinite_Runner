@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BerryScript.cs" />
      <Compile Include="Assets\Scripts\ChallengeController.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\UI\GameManager.cs" />
@@ -110,11 +111,11 @@
      <None Include="Assets\UI\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
- <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/jensine/Desktop/Infinite Runner/Infinite_Runner/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
- </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
  <HintPath>C:/Users/jensine/Desktop/Infinite Runner/Infinite_Runner/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.StandardEvents">
+ <HintPath>C:/Users/jensine/Desktop/Infinite Runner/Infinite_Runner/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
