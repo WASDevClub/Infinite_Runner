@@ -51,8 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraSystem.cs" />
+     <Compile Include="Assets\Scripts\ChallengeController.cs" />
      <Compile Include="Assets\Scripts\ObjectPooler.cs" />
+     <Compile Include="Assets\Scripts\PlatformGenerator.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\UI\GameManager.cs" />
      <Compile Include="Assets\Scripts\UI\MenuScript.cs" />
