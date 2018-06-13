@@ -4,62 +4,41 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour {
 
-    [System.Serializable]
-    public class Pool
-    {
-        public string tag;
-        public GameObject prefab;
-        public int size;
-    }
+    public GameObject pooledObj;
 
-    #region Singleton
-    public static ObjectPooler Instance;
+    public int pooledAmount;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
-    #endregion
-
-    public List<Pool> pools;
-    public Dictionary<string, Queue<GameObject>> poolDictionary;
-
+    List<GameObject> poolObjects;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-        poolDictionary = new Dictionary<string, Queue<GameObject>>();
+        poolObjects = new List<GameObject>();
 
-        foreach(Pool p in pools)
-        {
-            Queue<GameObject> objectPool = new Queue<GameObject>();
-
-            for(int i = 0; i < p.size; i++)
-            {
-                GameObject obj = Instantiate(p.prefab);
-                obj.SetActive(false);
-                objectPool.Enqueue(obj);
-            }
-
-            poolDictionary.Add(p.tag, objectPool);
+        for(int i = 0; i <  pooledAmount; i++)
+        {            
+            GameObject obj = (GameObject)Instantiate(pooledObj);
+            obj.SetActive(false); 
+            poolObjects.Add(obj);
         }
-	}
 
-    public GameObject SpawnFromPool(string tag, Vector2 position)
-    {
-
-        if (!poolDictionary.ContainsKey(tag))
-        {
-            print("Pool with tag " + tag + " doesn't exist.");
-            return null;
-        }
-        GameObject objectToSpawn = poolDictionary[tag].Dequeue();
-
-        objectToSpawn.SetActive(true);
-        objectToSpawn.transform.position = position;
-
-        poolDictionary[tag].Enqueue(objectToSpawn);
-
-        return objectToSpawn;
     }
+
+    public GameObject GetPooledObject()
+    {
+        foreach(GameObject go in poolObjects)
+        {
+            if (go.activeInHierarchy)
+            {
+                return go;
+            }
+        }
+
+        GameObject obj = (GameObject)Instantiate(pooledObj);
+        obj.SetActive(false);
+        poolObjects.Add(obj);
+
+        return obj;
+    }
+
 }
