@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour {
     bool isGrounded = false;
     float posX = 0.0f;
     bool isGameOver = false;
-    ChallengeController myChallengeController;
+    
     
 
 
@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour {
 	void Start () {
         myRigidBody = transform.GetComponent<Rigidbody2D>();
         posX = transform.position.x;
-        myChallengeController = GameObject.FindObjectOfType<ChallengeController>();
+       
 	}
 	
 	// Update is called once per frame
@@ -31,11 +31,7 @@ public class PlayerScript : MonoBehaviour {
         HandleMovement(horizontal);
         PlayerJump();
 
-        //Hit Check
-        //if (transform.position.x < posX)
-        //{
-        //    GameOver();
-        //}
+        
 	}
 
 
@@ -60,13 +56,7 @@ public class PlayerScript : MonoBehaviour {
         
     }
 
-    void GameOver()
-    {
-        isGameOver = true;
-        myChallengeController.GameOver();
-
-        FindObjectOfType<GameManager>().EndGame();
-    }
+    
 
     void OnCollisionEnter2D(Collision2D other)
     {
