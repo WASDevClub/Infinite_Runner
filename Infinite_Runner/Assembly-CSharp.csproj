@@ -51,10 +51,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\CeilingGenerator.cs" />
      <Compile Include="Assets\Scripts\ChallengeController.cs" />
      <Compile Include="Assets\Scripts\ObjectPooler.cs" />
      <Compile Include="Assets\Scripts\PlateformDestructor.cs" />
+=======
+     <Compile Include="Assets\Scripts\ChallengeController.cs" />
+     <Compile Include="Assets\Scripts\ObjectPooler.cs" />
+>>>>>>> 7019d7efff72d1ab9d629e268511209312faeba9
      <Compile Include="Assets\Scripts\PlatformGenerator.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\UI\GameManager.cs" />

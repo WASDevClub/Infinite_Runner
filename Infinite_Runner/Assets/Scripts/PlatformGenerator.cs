@@ -12,6 +12,7 @@ public class PlatformGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         platformWidth = platform.GetComponent<BoxCollider2D>().size.x;
+<<<<<<< HEAD
     }
 	
 	// Update is called once per frame
@@ -21,5 +22,12 @@ public class PlatformGenerator : MonoBehaviour {
             transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
             Instantiate(platform, transform.position, transform.rotation);
         }
+=======
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+>>>>>>> 7019d7efff72d1ab9d629e268511209312faeba9
 	}
 }
