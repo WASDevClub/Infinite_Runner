@@ -917,6 +917,8 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -931,6 +933,22 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba377106e806b7f4b8e4c5ae7d7a99f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  xMin: 0
+  xMax: 0
+  yMin: 0
+  yMax: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -981,6 +999,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47187895105a7b46988beda9321d2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xMin: 0
+  xMax: 18000
+  yMin: 0
+  yMax: 0
 --- !u!1 &556157982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,7 +1382,7 @@ GameObject:
   - component: {fileID: 998352006}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1469,6 +1502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpPower: 8
+  movementSpeed: 3
 --- !u!1 &1098342396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,7 +1809,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a910d690b7509a840a1c9428005c31a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformDestructor: {fileID: 0}
 --- !u!1 &1278833003
 GameObject:
   m_ObjectHideFlags: 0
@@ -3053,7 +3086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a910d690b7509a840a1c9428005c31a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformDestructor: {fileID: 0}
 --- !u!4 &1901682531 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4367089419933794, guid: 661228c7636a04d46bddaa16fb6dd8a5,
@@ -3068,11 +3100,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4669610986452296, guid: cd5be8676f1959f4a8297c5d77416ece, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.5879164
+      value: -5.995
       objectReference: {fileID: 0}
     - target: {fileID: 4669610986452296, guid: cd5be8676f1959f4a8297c5d77416ece, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.4136195
+      value: -3.151
       objectReference: {fileID: 0}
     - target: {fileID: 4669610986452296, guid: cd5be8676f1959f4a8297c5d77416ece, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3097,6 +3129,14 @@ Prefab:
     - target: {fileID: 4669610986452296, guid: cd5be8676f1959f4a8297c5d77416ece, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669610986452296, guid: cd5be8676f1959f4a8297c5d77416ece, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.08897042
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669610986452296, guid: cd5be8676f1959f4a8297c5d77416ece, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.107559465
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd5be8676f1959f4a8297c5d77416ece, type: 2}
