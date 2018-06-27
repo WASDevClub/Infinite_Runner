@@ -3337,6 +3337,19 @@ Transform:
   m_PrefabParentObject: {fileID: 4669610986452296, guid: cd5be8676f1959f4a8297c5d77416ece,
     type: 2}
   m_PrefabInternal: {fileID: 1925420002}
+--- !u!114 &1925420008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1925420003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a117ea9ff8c184abf5edadc04b665f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 56709508}
+  scoreCount: 0
 --- !u!1 &1931359960
 GameObject:
   m_ObjectHideFlags: 0
