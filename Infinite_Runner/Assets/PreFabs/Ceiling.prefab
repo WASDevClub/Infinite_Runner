@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4367089419933794}
   - component: {fileID: 212265924132973598}
   - component: {fileID: 61654776735159364}
+  - component: {fileID: 114234921296998566}
   m_Layer: 0
   m_Name: Ceiling
   m_TagString: Untagged
@@ -66,6 +67,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114234921296998566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836801364308290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c5f479fa1f700419009973583e5dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformDestructionPoint: {fileID: 0}
 --- !u!212 &212265924132973598
 SpriteRenderer:
   m_ObjectHideFlags: 1

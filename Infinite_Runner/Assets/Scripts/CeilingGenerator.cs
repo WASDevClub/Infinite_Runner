@@ -6,6 +6,7 @@ public class CeilingGenerator : MonoBehaviour {
 
     public GameObject ceiling;
     public Transform generationPoint;
+    public float distanceBetween;
     private float ceilingWidth;
 
     // Use this for initialization
@@ -18,7 +19,7 @@ public class CeilingGenerator : MonoBehaviour {
     {
         if (transform.position.x < generationPoint.position.x)
         {
-            transform.position = new Vector3(transform.position.x + ceilingWidth, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + distanceBetween + ceilingWidth, transform.position.y, transform.position.z);
             Instantiate(ceiling, transform.position, transform.rotation);
         }
     }

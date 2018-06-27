@@ -498,7 +498,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 146092084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21, y: 0, z: 0}
+  m_LocalPosition: {x: -28.64, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -809,8 +809,8 @@ MonoBehaviour:
   platform: {fileID: 1695717240565740, guid: 7b7e01e70435c7349b6a7d22cdf94bda, type: 2}
   generationPoint: {fileID: 1291052109}
   distanceBetween: 0
-  distanceBetweenMin: 11
-  distanceBetweenMax: 17
+  distanceBetweenMin: 0
+  distanceBetweenMax: 18
 --- !u!4 &372990631
 Transform:
   m_ObjectHideFlags: 0
@@ -863,7 +863,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114234921296998566, guid: 661228c7636a04d46bddaa16fb6dd8a5, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 661228c7636a04d46bddaa16fb6dd8a5, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &450420990
@@ -2767,6 +2768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ceiling: {fileID: 1836801364308290, guid: 661228c7636a04d46bddaa16fb6dd8a5, type: 2}
   generationPoint: {fileID: 1291052109}
+  distanceBetween: 10
 --- !u!1 &1613392906
 GameObject:
   m_ObjectHideFlags: 0
@@ -3085,23 +3087,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4629205692175814, guid: 6339e55834b513f4cb7013d6d89612a3,
     type: 2}
   m_PrefabInternal: {fileID: 1172742038}
---- !u!1 &1898594785 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1449275413311180, guid: 6339e55834b513f4cb7013d6d89612a3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1172742038}
---- !u!114 &1898594788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1898594785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16c5f479fa1f700419009973583e5dd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformDestructionPoint: {fileID: 0}
 --- !u!4 &1901682531 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4367089419933794, guid: 661228c7636a04d46bddaa16fb6dd8a5,
