@@ -7,6 +7,7 @@ public class SettingsMenuScript : MonoBehaviour {
 
     public void Back()
     {
+        //LOADING THE MENU SCENE, DYNAMICALLY
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }

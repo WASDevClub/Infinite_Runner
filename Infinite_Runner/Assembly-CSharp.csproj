@@ -53,7 +53,6 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CeilingGenerator.cs" />
-     <Compile Include="Assets\Scripts\ObjectPooler.cs" />
      <Compile Include="Assets\Scripts\ObjectPoolerBerries.cs" />
      <Compile Include="Assets\Scripts\ObjectPoolerCeilings.cs" />
      <Compile Include="Assets\Scripts\ObjectPoolerFloors.cs" />

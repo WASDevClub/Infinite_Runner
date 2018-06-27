@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//FOR NOTES ON HOW TO READ -- CHECK OBJECTPOOLERBERRIES OR OBKECTPOOLERFLOORS
+
 public class ObjectPoolerCeilings : MonoBehaviour {
 
     public GameObject pooledCeiling;

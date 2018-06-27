@@ -38,9 +38,11 @@ public class GameManager : MonoBehaviour {
         //-----BEGIN TIMER CODE-----\\   
         float t = Time.time - startTime;
 
+        //CODE TO GET MINUTES AND SECONDS
         string minutes = ((int)t / 60).ToString();
         string seconds = (t % 60).ToString("f1");
 
+        //PUTS MINUTE AND SECOND TEXT INTO THE TIMER TEXT
         timerText.text = minutes + ":" + seconds;
         //------END TIMER CODE------\\ 
     }
@@ -54,8 +56,10 @@ public class GameManager : MonoBehaviour {
 
     public void RestartGame()
     {
+        //RELOADS THE CURRENT (GAME) SCENE
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
+        //CALLS THE METHOD THAT RESUME THE TIMER, SO THE GAME STARTS RIGHT AWAY
         Resume();
     }
     //------END GAME OVER CODE------\\ 
