@@ -1,1 +1,0 @@
-Add UI designs for all screens.
