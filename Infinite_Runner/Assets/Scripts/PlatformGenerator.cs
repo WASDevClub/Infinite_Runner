@@ -12,6 +12,10 @@ public class PlatformGenerator : MonoBehaviour {
     public float distanceBetweenMin;
     public float distanceBetweenMax;
 
+    public ObjectPoolerFloors objFloor;
+    
+    //public ObjectPoolerBerries objBerry;
+
     // Use this for initialization
     void Start () {
         platformWidth = platform.GetComponent<BoxCollider2D>().size.x;
@@ -23,7 +27,20 @@ public class PlatformGenerator : MonoBehaviour {
         {
             distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
             transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
-            Instantiate(platform, transform.position, transform.rotation);
+
+            GameObject newFloor = objFloor.GetPooledFloor();
+
+            newFloor.transform.position = transform.position;
+            newFloor.transform.rotation = transform.rotation;
+            newFloor.SetActive(true);
+
+            
+
+            //GameObject newBerry = objBerry.GetPooledBerries();
+
+            //newBerry.transform.position = transform.position;
+            //newBerry.transform.rotation = transform.rotation;
+            //newBerry.SetActive(true);
         }
 	}
 }

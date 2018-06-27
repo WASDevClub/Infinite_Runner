@@ -9,6 +9,8 @@ public class CeilingGenerator : MonoBehaviour {
     public float distanceBetween;
     private float ceilingWidth;
 
+    public ObjectPoolerCeilings objCeil;
+
     // Use this for initialization
     void Start(){
         ceilingWidth = ceiling.GetComponent<BoxCollider2D>().size.x;
@@ -20,7 +22,13 @@ public class CeilingGenerator : MonoBehaviour {
         if (transform.position.x < generationPoint.position.x)
         {
             transform.position = new Vector3(transform.position.x + distanceBetween + ceilingWidth, transform.position.y, transform.position.z);
-            Instantiate(ceiling, transform.position, transform.rotation);
+            //Instantiate(ceiling, transform.position, transform.rotation);
+
+            GameObject newCeil = objCeil.GetPooledCeiling();
+
+            newCeil.transform.position = transform.position;
+            newCeil.transform.rotation = transform.rotation;
+            newCeil.SetActive(true);
         }
     }
 }
