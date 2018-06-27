@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class pickUpBerries : MonoBehaviour {
-
+public class PickupBerries : MonoBehaviour {
 
     public Text scoreText;
     public float scoreCount;
@@ -16,10 +15,10 @@ public class pickUpBerries : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
-    }
+		
+	}
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEvent(Collider2D other)
     {
         if(other.gameObject.name == "Player")
         {
@@ -28,5 +27,4 @@ public class pickUpBerries : MonoBehaviour {
             gameObject.SetActive(false);
         }
     }
-
 }
