@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -14,7 +15,8 @@ public class PlayerScript : MonoBehaviour {
     bool isGameOver = false;
 
 
-
+    public Text scoreText;
+    public float scoreCount;
 
     // Use this for initialization
     void Start()
@@ -83,4 +85,6 @@ public class PlayerScript : MonoBehaviour {
             isGrounded = false;
         }
     }
+
+    
 }

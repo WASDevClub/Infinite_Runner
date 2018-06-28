@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4669610986452296}
   - component: {fileID: 212003504341094494}
   - component: {fileID: 114510530914499574}
+  - component: {fileID: 58350012062959922}
+  - component: {fileID: 114696352767902312}
   m_Layer: 0
   m_Name: CollectableBerry
   m_TagString: Untagged
@@ -34,13 +36,28 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1698954525026604}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.01, y: -3.06, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalRotation: {x: -0, y: -0.019751262, z: -0, w: 0.9998049}
+  m_LocalPosition: {x: -4.619, y: -3.2, z: -0.024}
+  m_LocalScale: {x: 0.13665722, y: 0.15431094, z: 0.20423263}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -2.263, z: 0}
+--- !u!58 &58350012062959922
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698954525026604}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3.665
 --- !u!114 &114510530914499574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53,6 +70,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformDestructionPoint: {fileID: 0}
+--- !u!114 &114696352767902312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698954525026604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621ec6a77bff3443bb4359432499f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreToGive: 1
 --- !u!212 &212003504341094494
 SpriteRenderer:
   m_ObjectHideFlags: 1

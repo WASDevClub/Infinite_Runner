@@ -14,7 +14,7 @@ public class PlatformGenerator : MonoBehaviour {
     public float distanceBetweenMin; //SETTING A MIN & MAX VALUE FOR DISTANCE (FOR RANDOM SELECTION)
     public float distanceBetweenMax;
 
-    
+
     #endregion
 
     #region Berries
