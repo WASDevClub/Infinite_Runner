@@ -810,12 +810,21 @@ MonoBehaviour:
   generationPoint: {fileID: 1291052109}
   distanceBetween: 0
   distanceBetweenMin: 10
-  distanceBetweenMax: 17
+  distanceBetweenMax: 15
   objFloor: {fileID: 1193068299}
   objBerry: {fileID: 722295777}
   berryHeightMin: -3
   berryHeightMax: 0.25
   berryHeight: 0
+  objStalagmite: {fileID: 793124735}
+  stalagMin: 50
+  stalagMax: 80
+  stalagDistance: 0
+  thePlatforms:
+  - {fileID: 1414822015426208, guid: 6cccb19c8e9ec0d479305683d1b3d669, type: 2}
+  - {fileID: 1030489102813226, guid: d24747272bd373f45b790382bcf03474, type: 2}
+  - {fileID: 1695717240565740, guid: 7b7e01e70435c7349b6a7d22cdf94bda, type: 2}
+  - {fileID: 1982856571223112, guid: eb236dfe2bd0fc647821d85b24895c95, type: 2}
 --- !u!4 &372990631
 Transform:
   m_ObjectHideFlags: 0
@@ -943,6 +952,60 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 450420990}
+--- !u!1 &499595109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 499595110}
+  - component: {fileID: 499595111}
+  m_Layer: 0
+  m_Name: Catcher
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &499595110
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 499595109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -5.75, z: 0}
+  m_LocalScale: {x: 30, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &499595111
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 499595109}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1079,7 @@ Transform:
   m_Children:
   - {fileID: 1291052109}
   - {fileID: 146092085}
+  - {fileID: 499595110}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1228,6 +1292,48 @@ RectTransform:
   m_AnchoredPosition: {x: 164.29999, y: 75.5}
   m_SizeDelta: {x: 113.1, y: 47.2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &793124733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 793124734}
+  - component: {fileID: 793124735}
+  m_Layer: 0
+  m_Name: ObjectPoolerObstacles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &793124734
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 793124733}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1483744822}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &793124735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 793124733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0736d052e312b1f4fa402ba8da60b17f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stalagmite: {fileID: 1170901237303640, guid: ce907e46abec5284788168e853a78e31, type: 2}
+  pooledStalagmiteAmount: 5
 --- !u!1 &899947139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,6 +2847,7 @@ Transform:
   - {fileID: 1193068298}
   - {fileID: 536619041}
   - {fileID: 722295776}
+  - {fileID: 793124734}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
