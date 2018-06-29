@@ -27,9 +27,15 @@ public class PlatformGenerator : MonoBehaviour {
     #endregion
 
     #region Obstacles
+    //STALAGMITE
     public float stalagMin;
     public float stalagMax;
     private float stalagDistance;
+
+    //STALCTITE
+    public float stalacMin;
+    public float stalacMax;
+    private float stalacDistance;
     #endregion
 
     #region Arrays
@@ -93,16 +99,30 @@ public class PlatformGenerator : MonoBehaviour {
             newBerry.transform.rotation = transform.rotation;
             newBerry.SetActive(true);
 
-            stalagDistance = Random.Range(0, platformWidth);
+            #region StalagmiteGeneration
+            if(platformSelector != 0)
+            {
+                stalagDistance = Random.Range(stalagMin, stalagMax);
+                stalagSelector = Random.Range(0, objStalagmite.Length);
+
+                GameObject newStalag = objStalagmite[stalagSelector].GetPooledStalagmite();
+
+                newStalag.transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), -3.62f, transform.position.z);
+                newStalag.transform.rotation = transform.rotation;
+                newStalag.SetActive(true);
+
+                stalacDistance = Random.Range(stalacMin, stalacMax);
+                stalacSelector = Random.Range(0, objStalactite.Length);
+
+                GameObject newStalac = objStalactite[stalacSelector].GetPooledStalactite();
+
+                newStalac.transform.position = new Vector3(transform.position.x, 2, transform.position.z);
+                newStalac.transform.rotation = transform.rotation;
+                newStalac.SetActive(true);
+            }            
+            #endregion
 
 
-            stalagSelector = Random.Range(0, objStalagmite.Length);
-
-            GameObject newStalag = objStalagmite[stalagSelector].getPooledStalagmite();
-
-            newStalag.transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + stalagDistance, transform.position.y + 1.5f, transform.position.z);
-            newStalag.transform.rotation = transform.rotation;
-            newStalag.SetActive(true);
         }
     }
 }

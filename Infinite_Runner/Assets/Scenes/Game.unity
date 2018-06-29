@@ -814,8 +814,10 @@ MonoBehaviour:
   berryHeightMin: 0
   berryHeightMax: 0
   berryHeight: 0
-  stalagMin: 50
-  stalagMax: 80
+  stalagMin: 0
+  stalagMax: 6
+  stalacMin: 0
+  stalacMax: 0
   objFloor:
   - {fileID: 1310947091}
   - {fileID: 877310892}
@@ -825,7 +827,9 @@ MonoBehaviour:
   - {fileID: 793124735}
   - {fileID: 1808155224}
   - {fileID: 1861676659}
-  objStalactite: []
+  objStalactite:
+  - {fileID: 954626549}
+  - {fileID: 2077852463}
 --- !u!4 &372990631
 Transform:
   m_ObjectHideFlags: 0
@@ -1386,6 +1390,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stalagmite: {fileID: 1170901237303640, guid: ce907e46abec5284788168e853a78e31, type: 2}
   pooledStalagmiteAmount: 5
+  stalactite: {fileID: 0}
+  pooledStalactiteAmount: 0
 --- !u!1 &877310890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,8 +1616,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0736d052e312b1f4fa402ba8da60b17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stalagmite: {fileID: 1344477169572294, guid: 5b11fa6543c4781428d0a4ac0178cfef, type: 2}
-  pooledStalagmiteAmount: 5
+  stalagmite: {fileID: 0}
+  pooledStalagmiteAmount: 0
+  stalactite: {fileID: 1538534267565682, guid: 5b11fa6543c4781428d0a4ac0178cfef, type: 2}
+  pooledStalactiteAmount: 5
 --- !u!4 &954626550
 Transform:
   m_ObjectHideFlags: 0
@@ -3064,7 +3072,7 @@ GameObject:
   - component: {fileID: 1475110282}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3607,6 +3615,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stalagmite: {fileID: 1309512802298178, guid: 6a3992ba878ad9141bc6f403d8aef8c9, type: 2}
   pooledStalagmiteAmount: 5
+  stalactite: {fileID: 0}
+  pooledStalactiteAmount: 0
 --- !u!1 &1832322493
 GameObject:
   m_ObjectHideFlags: 0
@@ -3723,6 +3733,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stalagmite: {fileID: 1870993604651516, guid: d605867844860fa4d98cdf5b3ebde971, type: 2}
   pooledStalagmiteAmount: 5
+  stalactite: {fileID: 0}
+  pooledStalactiteAmount: 0
 --- !u!4 &1895891221 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4629205692175814, guid: 6339e55834b513f4cb7013d6d89612a3,
@@ -3980,8 +3992,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0736d052e312b1f4fa402ba8da60b17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stalagmite: {fileID: 1259424541128324, guid: 36b8229486543a3489c04765ffa02c69, type: 2}
-  pooledStalagmiteAmount: 5
+  stalagmite: {fileID: 0}
+  pooledStalagmiteAmount: 0
+  stalactite: {fileID: 1736915972644990, guid: 36b8229486543a3489c04765ffa02c69, type: 2}
+  pooledStalactiteAmount: 5
 --- !u!4 &2077852464
 Transform:
   m_ObjectHideFlags: 0
