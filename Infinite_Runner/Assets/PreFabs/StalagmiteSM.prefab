@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4157135901638740}
   - component: {fileID: 212646885415212648}
   - component: {fileID: 60243586479870904}
+  - component: {fileID: 114890116819155322}
   m_Layer: 0
   m_Name: StalagmiteSM
   m_TagString: Stalagmite
@@ -68,6 +69,18 @@ PolygonCollider2D:
     - - {x: 0, y: 0.5}
       - {x: -0.4330127, y: -0.25000003}
       - {x: 0.43301272, y: -0.24999996}
+--- !u!114 &114890116819155322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170901237303640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c5f479fa1f700419009973583e5dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformDestructionPoint: {fileID: 0}
 --- !u!212 &212646885415212648
 SpriteRenderer:
   m_ObjectHideFlags: 1

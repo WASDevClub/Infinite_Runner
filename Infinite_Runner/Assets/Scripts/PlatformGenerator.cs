@@ -7,7 +7,7 @@ public class PlatformGenerator : MonoBehaviour {
     #region Platforms
     public GameObject platform; //GETTING THE PLATFORM (FLOOR) OBJECT
     public Transform generationPoint; //POINT IN WHICH THE FLOOR SHOULD GENERATE
-    public float distanceBetween; //GETTING THE DISTANCE BETWEEN EACH PLATFORM
+    private float distanceBetween; //GETTING THE DISTANCE BETWEEN EACH PLATFORM
     private float platformWidth; //CHOOSING THE LENGTH
 
 
@@ -23,12 +23,13 @@ public class PlatformGenerator : MonoBehaviour {
     public float berryHeightMin; //SETTING MIN & MAX HEIGHT
     public float berryHeightMax;
     public float berryHeight; //CHOSEN HEIGHT
+    private float berryX;
     #endregion
 
     #region Obstacles
     public float stalagMin;
     public float stalagMax;
-    public float stalagDistance;
+    private float stalagDistance;
     #endregion
 
     #region Arrays
@@ -37,14 +38,16 @@ public class PlatformGenerator : MonoBehaviour {
 
     private float[] platformWidths;
 
-    //public ObjectPoolerObstacles[] objStalagmite;
-    //private int stalagSelector;
+    public ObjectPoolerObstacles[] objStalagmite;
+    private int stalagSelector;
+
+    public ObjectPoolerObstacles[] objStalactite;
+    private int stalacSelector;
     #endregion
 
 
     // Use this for initialization
     void Start () {
-        //platformWidth = platform.GetComponent<BoxCollider2D>().size.x;
         //FILL UP ARRYAY FOR PLATFORM WIDTHS
         platformWidths = new float[objFloor.Length];
 
@@ -56,46 +59,50 @@ public class PlatformGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(transform.position.x < generationPoint.position.x)
+        if (transform.position.x < generationPoint.position.x)
         {
             //GETTING RANDOM NUMBERS FOR THE DISTANCE
             distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
             //GETTING THE INDEX FOR THE PLATFORMS (WIDTHS) ARRAY
             platformSelector = Random.Range(0, objFloor.Length);
             //MAKING A NEW POSITION ACCORDINGLY
-            transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + distanceBetween, transform.position.y, transform.position.z);
-
-            //Instantiate(thePlatforms[platformSelector], transform.position, transform.rotation);
+            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2) + distanceBetween, transform.position.y, transform.position.z);
 
             //CALLING THE OBJECT POOL FOR PLOORS CLASS AND FINDING AN INACTIVE PLATFORM OR MAKING A NEW ONE AND RETURNING THAT GAMEOBJECT
             GameObject newFloor = objFloor[platformSelector].GetPooledFloor();
+
+
 
             //SETTING A POSITION AND ROTATION FOR RETURNED GAME OBJECT
             newFloor.transform.position = transform.position;
             newFloor.transform.rotation = transform.rotation;
             newFloor.SetActive(true);
 
+            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
+
+
             //CHOOSING RANDOM RANGE FOR HEIGHT OF BERRY
             berryHeight = Random.Range(berryHeightMin, berryHeightMax);
+            berryX = Random.Range(0, platformWidths[platformSelector]);
 
             //GETTING BERRY OBJECT FROM THE OBJECT POOL CLASS
             GameObject newBerry = objBerry.GetPooledBerries();
 
             //SETTING A POSITION AND ROTATION FOR RETURNED GAME OBJECT
-            newBerry.transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, berryHeight, transform.position.z);
+            newBerry.transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + distanceBetween, berryHeight, transform.position.z);
             newBerry.transform.rotation = transform.rotation;
             newBerry.SetActive(true);
 
             stalagDistance = Random.Range(0, platformWidth);
 
 
-            //stalagSelector = Random.Range(0, objStalagmite.Length);
+            stalagSelector = Random.Range(0, objStalagmite.Length);
 
-            //GameObject newStalag = objStalagmite[stalagSelector].getPooledStalagmite();
+            GameObject newStalag = objStalagmite[stalagSelector].getPooledStalagmite();
 
-            //newStalag.transform.position = new Vector3(transform.position.x + platformWidth + stalagDistance, platform.transform.position.y + 1.75f, transform.position.z);
-            //newStalag.transform.rotation = transform.rotation;
-            //newStalag.SetActive(true);
+            newStalag.transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + stalagDistance, transform.position.y + 1.5f, transform.position.z);
+            newStalag.transform.rotation = transform.rotation;
+            newStalag.SetActive(true);
         }
-	}
+    }
 }

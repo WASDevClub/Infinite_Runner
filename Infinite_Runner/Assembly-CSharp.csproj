@@ -51,16 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PickUpBerries.cs" />
+     <Compile Include="Assets\Scripts\BerryPickup.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CeilingGenerator.cs" />
      <Compile Include="Assets\Scripts\ObjectPoolerBerries.cs" />
      <Compile Include="Assets\Scripts\ObjectPoolerCeilings.cs" />
      <Compile Include="Assets\Scripts\ObjectPoolerFloors.cs" />
      <Compile Include="Assets\Scripts\ObjectPoolerObstacles.cs" />
-     <Compile Include="Assets\Scripts\PickupBerries.cs" />
      <Compile Include="Assets\Scripts\PlatformDestroyer.cs" />
      <Compile Include="Assets\Scripts\PlatformGenerator.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\UI\GameManager.cs" />
      <Compile Include="Assets\Scripts\UI\MenuScript.cs" />
      <Compile Include="Assets\Scripts\UI\SettingsMenuScript.cs" />
