@@ -13,8 +13,6 @@ public class PlatformGenerator : MonoBehaviour {
 
     public float distanceBetweenMin; //SETTING A MIN & MAX VALUE FOR DISTANCE (FOR RANDOM SELECTION)
     public float distanceBetweenMax;
-
-
     #endregion
 
     #region Berries
@@ -22,7 +20,7 @@ public class PlatformGenerator : MonoBehaviour {
 
     public float berryHeightMin; //SETTING MIN & MAX HEIGHT
     public float berryHeightMax;
-    public float berryHeight; //CHOSEN HEIGHT
+    private float berryHeight; //CHOSEN HEIGHT
     private float berryX;
     #endregion
 
@@ -51,6 +49,8 @@ public class PlatformGenerator : MonoBehaviour {
     private int stalacSelector;
     #endregion
 
+    int randNum = 0;
+
 
     // Use this for initialization
     void Start () {
@@ -67,17 +67,16 @@ public class PlatformGenerator : MonoBehaviour {
 	void Update () {
         if (transform.position.x < generationPoint.position.x)
         {
+            #region Platforms
             //GETTING RANDOM NUMBERS FOR THE DISTANCE
             distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
             //GETTING THE INDEX FOR THE PLATFORMS (WIDTHS) ARRAY
             platformSelector = Random.Range(0, objFloor.Length);
             //MAKING A NEW POSITION ACCORDINGLY
-            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2) + distanceBetween, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2) + distanceBetween, -4.85f, transform.position.z);
 
             //CALLING THE OBJECT POOL FOR PLOORS CLASS AND FINDING AN INACTIVE PLATFORM OR MAKING A NEW ONE AND RETURNING THAT GAMEOBJECT
             GameObject newFloor = objFloor[platformSelector].GetPooledFloor();
-
-
 
             //SETTING A POSITION AND ROTATION FOR RETURNED GAME OBJECT
             newFloor.transform.position = transform.position;
@@ -85,8 +84,27 @@ public class PlatformGenerator : MonoBehaviour {
             newFloor.SetActive(true);
 
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
+            #endregion
 
+            randNum = Random.Range(0, 10);
+            #region Stalagmites
+            for (int i = 0; i < 10; i++)
+            {
+                if (i == randNum && platformSelector != 0 && platformSelector != 1)
+                {
+                    stalagDistance = Random.Range((platformWidths[platformSelector] / 8), platformWidths[platformSelector]);
+                    stalagSelector = Random.Range(0, objStalagmite.Length);
 
+                    GameObject newStalag;
+                    newStalag = objStalagmite[stalagSelector].GetPooledStalagmite();
+                    newStalag.transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), -3.78f, transform.position.z);
+                    newStalag.transform.rotation = transform.rotation;
+                    newStalag.SetActive(true);                    
+                }
+            }
+            #endregion
+
+            #region Berries
             //CHOOSING RANDOM RANGE FOR HEIGHT OF BERRY
             berryHeight = Random.Range(berryHeightMin, berryHeightMax);
             berryX = Random.Range(0, platformWidths[platformSelector]);
@@ -95,31 +113,35 @@ public class PlatformGenerator : MonoBehaviour {
             GameObject newBerry = objBerry.GetPooledBerries();
 
             //SETTING A POSITION AND ROTATION FOR RETURNED GAME OBJECT
-            newBerry.transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + distanceBetween, berryHeight, transform.position.z);
+            newBerry.transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2) + distanceBetween + berryX, berryHeight, transform.position.z);
             newBerry.transform.rotation = transform.rotation;
-            newBerry.SetActive(true);
+            #endregion
 
-            #region StalagmiteGeneration
-            if(platformSelector != 0)
-            {
-                stalagDistance = Random.Range(stalagMin, stalagMax);
-                stalagSelector = Random.Range(0, objStalagmite.Length);
+            
 
-                GameObject newStalag = objStalagmite[stalagSelector].GetPooledStalagmite();
+            #region Stalactites
+            stalacDistance = Random.Range(stalacMin, stalacMax);
+            stalacSelector = Random.Range(0, objStalactite.Length);
 
-                newStalag.transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), -3.62f, transform.position.z);
-                newStalag.transform.rotation = transform.rotation;
-                newStalag.SetActive(true);
+            GameObject newStalac = objStalactite[stalacSelector].GetPooledStalactite();
 
-                stalacDistance = Random.Range(stalacMin, stalacMax);
-                stalacSelector = Random.Range(0, objStalactite.Length);
+            newStalac.transform.position = new Vector3(transform.position.x + stalacDistance, 2, transform.position.z);
+            newStalac.transform.rotation = transform.rotation;
+            #endregion
 
-                GameObject newStalac = objStalactite[stalacSelector].GetPooledStalactite();
-
-                newStalac.transform.position = new Vector3(transform.position.x, 2, transform.position.z);
-                newStalac.transform.rotation = transform.rotation;
-                newStalac.SetActive(true);
-            }            
+            #region Generation
+            //if (platformSelector != 0 && newStalag.transform.position.x != newStalac.transform.position.x && newStalag.transform.position.x != newBerry.transform.position.x)
+            //{                
+            //    newStalag.SetActive(true);
+            //}
+            //if(newStalac.transform.position.x != newStalag.transform.position.x && newStalac.transform.position.x != newBerry.transform.position.x)
+            //{                
+            //    newStalac.SetActive(true);
+            //}
+            //if (newBerry.transform.position.x != newStalag.transform.position.x && newBerry.transform.position.x != newStalac.transform.position.x)
+            //{
+            //    newBerry.SetActive(true);
+            //}
             #endregion
 
 

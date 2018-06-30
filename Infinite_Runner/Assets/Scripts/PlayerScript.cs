@@ -18,6 +18,8 @@ public class PlayerScript : MonoBehaviour {
     public Text scoreText;
     public float scoreCount;
 
+    private GameManager gm;
+
     // Use this for initialization
     void Start()
     {
@@ -31,19 +33,22 @@ public class PlayerScript : MonoBehaviour {
     {
 
         float horizontal = Input.GetAxis("Horizontal");
-
+        
         HandleMovement(horizontal);
         PlayerJump();
 
+        //END GAME SCREEN CODE
+        if(myRigidBody.position.y < -6.75)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
 
     }
 
     //Horizantal movement
     private void HandleMovement(float horizontal)
     {
-
         myRigidBody.velocity =  new Vector2(horizontal * movementSpeed, myRigidBody.velocity.y);
-
     }
 
     private void PlayerJump()
@@ -54,13 +59,6 @@ public class PlayerScript : MonoBehaviour {
             myRigidBody.AddForce(Vector3.up * (jumpPower * myRigidBody.mass * myRigidBody.gravityScale * 15));
         }
     }
-
-    //private void Update()
-    //{
-
-    //}
-
-
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -85,6 +83,4 @@ public class PlayerScript : MonoBehaviour {
             isGrounded = false;
         }
     }
-
-    
 }

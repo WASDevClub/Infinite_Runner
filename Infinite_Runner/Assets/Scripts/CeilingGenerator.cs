@@ -24,7 +24,7 @@ public class CeilingGenerator : MonoBehaviour {
         if (transform.position.x < generationPoint.position.x)
         {
             //CREATING A VECTOR(X,Y,Z COORDINATES) FOR THE CEILING
-            transform.position = new Vector3(transform.position.x + distanceBetween + ceilingWidth, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + distanceBetween + ceilingWidth, (4.60f), transform.position.z);
 
             //CREATING A "NEW" OBJECT FOR THE CEILING. IT IS GOING THROUGH THE OBJECT POOL FOR CEILINGS, AND EITHER GETTING AN INACTIVE ONE OR MAKING A NEW ONE. IT RETURNS THE GANEOBJECT
             GameObject newCeil = objCeil.GetPooledCeiling();

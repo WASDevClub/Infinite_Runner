@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AudioScript.cs" />
      <Compile Include="Assets\PickUpBerries.cs" />
      <Compile Include="Assets\Scripts\BerryPickup.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
