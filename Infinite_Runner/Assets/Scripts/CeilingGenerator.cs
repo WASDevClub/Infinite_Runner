@@ -10,7 +10,7 @@ public class CeilingGenerator : MonoBehaviour {
     public float distanceBetween; //THIS TO SHOW HOW MUCH DISTANT IS MEANT TO BE IN BETWEEN EACH OBJECT (THIS ONE IDK WHY I NEED IT, BUT THE CEILINGS WON'T GEN W/O. IT WAS BOPIED OVER FROM MY FLOORS CODE, WHICH DOES USE IT)
     private float ceilingWidth; //THE WIDTH OF THE CEILING
 
-    public ObjectPoolerCeilings objCeil;
+    public ObjectPooler objCeil;
 
     // Use this for initialization
     void Start(){
@@ -27,7 +27,7 @@ public class CeilingGenerator : MonoBehaviour {
             transform.position = new Vector3(transform.position.x + distanceBetween + ceilingWidth, (4.60f), transform.position.z);
 
             //CREATING A "NEW" OBJECT FOR THE CEILING. IT IS GOING THROUGH THE OBJECT POOL FOR CEILINGS, AND EITHER GETTING AN INACTIVE ONE OR MAKING A NEW ONE. IT RETURNS THE GANEOBJECT
-            GameObject newCeil = objCeil.GetPooledCeiling();
+            GameObject newCeil = objCeil.GetPooledObj();
 
             //THE GAME OBJECT THAT WAS RETURN IS NOW PLACED IN THE CORRECT POSITION & ROTATION. THEN IT IS SET TO ACTIVE
             newCeil.transform.position = transform.position;
