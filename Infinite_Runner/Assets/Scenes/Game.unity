@@ -815,11 +815,13 @@ MonoBehaviour:
   objBerry: {fileID: 722295777}
   berryHeightMin: 0
   berryHeightMax: 0
-  randomBerryThreshold: 50
+  randomBerryThreshold: 25
   stalagMin: 0
   stalagMax: 0
+  randomStalagmiteThreshold: 50
   stalacMin: 0
   stalacMax: 0
+  randomStalactiteThreshold: 75
   objFloor:
   - {fileID: 1310947091}
   - {fileID: 877310892}
@@ -1010,7 +1012,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.235042
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1915,7 +1917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpPower: 7.8
-  movementSpeed: 100
+  movementSpeed: 20
   scoreText: {fileID: 56709508}
   scoreCount: 0
 --- !u!1 &1098342396
