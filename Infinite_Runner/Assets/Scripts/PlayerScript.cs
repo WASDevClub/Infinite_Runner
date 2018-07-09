@@ -12,11 +12,6 @@ public class PlayerScript : MonoBehaviour {
     Rigidbody2D myRigidBody;
     bool isGrounded = false;
     float posX = 0.0f;
-    bool isGameOver = false;
-
-
-    public Text scoreText;
-    public float scoreCount;
 
     private GameManager gm;
 
@@ -32,9 +27,10 @@ public class PlayerScript : MonoBehaviour {
     void FixedUpdate()
     {
 
-        float horizontal = Input.GetAxis("Horizontal");
-        
-        HandleMovement(horizontal);
+        //float horizontal = Input.GetAxis("Horizontal");
+
+        //HandleMovement(horizontal);
+        myRigidBody.velocity = new Vector2(movementSpeed, myRigidBody.velocity.y);
         PlayerJump();
 
         //END GAME SCREEN CODE
@@ -45,16 +41,16 @@ public class PlayerScript : MonoBehaviour {
 
     }
 
-    //Horizantal movement
-    private void HandleMovement(float horizontal)
-    {
-        myRigidBody.velocity =  new Vector2(horizontal * movementSpeed, myRigidBody.velocity.y);
-    }
+    ////Horizantal movement
+    //private void HandleMovement(float horizontal)
+    //{
+    //    myRigidBody.velocity =  new Vector2(horizontal * movementSpeed, myRigidBody.velocity.y);
+    //}
 
     private void PlayerJump()
     {
         //Jump
-        if (Input.GetKey(KeyCode.Space) && isGrounded && !isGameOver)
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
             myRigidBody.AddForce(Vector3.up * (jumpPower * myRigidBody.mass * myRigidBody.gravityScale * 15));
         }

@@ -813,8 +813,6 @@ MonoBehaviour:
   maxHeightPoint: {fileID: 1607610482}
   maxHeightChange: 2.5
   objBerry: {fileID: 722295777}
-  berryHeightMin: 0
-  berryHeightMax: 0
   randomBerryThreshold: 25
   stalagMin: 0
   stalagMax: 0
@@ -1916,10 +1914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c0c2ce51b44d44cbf66741e6a3f7fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 7.8
-  movementSpeed: 20
-  scoreText: {fileID: 56709508}
-  scoreCount: 0
+  jumpPower: 8.8
+  movementSpeed: 14
 --- !u!1 &1098342396
 GameObject:
   m_ObjectHideFlags: 0
