@@ -498,7 +498,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 146092084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.5, y: 0, z: 0}
+  m_LocalPosition: {x: -51.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -840,7 +840,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 372990629}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.5, y: -0.69, z: 0.12530375}
+  m_LocalPosition: {x: 25.3, y: -0.69, z: 0.12530375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1607610482}
@@ -1476,7 +1476,7 @@ Transform:
   m_GameObject: {fileID: 850916118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.49, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2375001, y: 0.23750015, z: 1}
   m_Children: []
   m_Father: {fileID: 998352005}
   m_RootOrder: 0
@@ -1846,7 +1846,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 7
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1929,7 +1929,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998352001}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.3, y: 0.69, z: 0.029296875}
+  m_LocalPosition: {x: -22.2, y: 0.3, z: 0.029296875}
   m_LocalScale: {x: 0.75559425, y: 0.9083483, z: 1}
   m_Children:
   - {fileID: 850916119}
@@ -1947,10 +1947,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c0c2ce51b44d44cbf66741e6a3f7fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 8.8
-  speedMultiplier: 1.25
-  speedIncreaseMilestone: 100
-  grounded: 1
+  jumpPower: 17
+  speedMultiplier: 1.03
+  speedIncreaseMilestone: 150
+  jumpTime: 0.25
+  grounded: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -2519,7 +2520,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1291052108}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 59.3, y: -4.97, z: 4.7773438}
+  m_LocalPosition: {x: 58.9, y: -4.97, z: 4.7773438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -3173,7 +3174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1475110281}
   - component: {fileID: 1475110282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Catcher
   m_TagString: Ground
   m_Icon: {fileID: 0}

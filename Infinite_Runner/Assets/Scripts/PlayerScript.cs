@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour {
 
+    //JUMPING
     public float jumpPower = 3.0f;
-
     public float speedMultiplier;
-
     public float speedIncreaseMilestone;
     private float speedMilestonCount;
+    public float jumpTime;
+    private float jumpTimeCounter;
 
     //Collision with side of platform
     public bool grounded;
@@ -86,33 +87,56 @@ public class PlayerScript : MonoBehaviour {
     private void PlayerJump()
     {
         //Jump
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButton(0))
         {
-            myRigidBody.AddForce(Vector3.up * (jumpPower * myRigidBody.mass * myRigidBody.gravityScale * 15));
+            if (grounded)
+            {
+                //myRigidBody.AddForce(Vector3.up * (jumpPower * myRigidBody.mass * myRigidBody.gravityScale * 15));
+                myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpPower);
+            }
+        }
+
+        if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
+        {
+            if(jumpTimeCounter > 0)
+            {
+                myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpPower);
+                jumpTimeCounter -= Time.deltaTime;
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
+        {
+            jumpTimeCounter = 0;
+        }
+
+        if (grounded)
+        {
+            jumpTimeCounter = jumpTime;
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.collider.tag == "Ground")
-        {
-            isGrounded = true;
-        }
-    }
+    //void OnCollisionEnter2D(Collision2D other)
+    //{
+    //    if (other.collider.tag == "Ground")
+    //    {
+    //        isGrounded = true;
+    //    }
+    //}
 
-    void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.collider.tag == "Ground")
-        {
-            isGrounded = true;
-        }
-    }
+    //void OnCollisionStay2D(Collision2D other)
+    //{
+    //    if (other.collider.tag == "Ground")
+    //    {
+    //        isGrounded = true;
+    //    }
+    //}
 
-    void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.collider.tag == "Ground")
-        {
-            isGrounded = false;
-        }
-    }
+    //void OnCollisionExit2D(Collision2D other)
+    //{
+    //    if (other.collider.tag == "Ground")
+    //    {
+    //        isGrounded = false;
+    //    }
+    //}
 }
