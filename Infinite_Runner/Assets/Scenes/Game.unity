@@ -808,8 +808,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform: {fileID: 1695717240565740, guid: 7b7e01e70435c7349b6a7d22cdf94bda, type: 2}
   generationPoint: {fileID: 1291052109}
-  distanceBetweenMin: 5
-  distanceBetweenMax: 10
+  distanceBetweenMin: 8
+  distanceBetweenMax: 15
   maxHeightPoint: {fileID: 1607610482}
   maxHeightChange: 2.5
   objBerry: {fileID: 722295777}
@@ -1057,10 +1057,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47187895105a7b46988beda9321d2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: 0
-  xMax: 18000
-  yMin: 0
-  yMax: 0
 --- !u!1 &536619040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1949,7 +1945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpPower: 17
   speedMultiplier: 1.03
-  speedIncreaseMilestone: 150
+  speedIncreaseMilestone: 100
   jumpTime: 0.25
   grounded: 0
   whatIsGround:

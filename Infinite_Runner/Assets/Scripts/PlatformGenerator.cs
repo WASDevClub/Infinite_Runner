@@ -130,12 +130,16 @@ public class PlatformGenerator : MonoBehaviour {
                 {
                     if (i == randNum && platformSelector != 0 && platformSelector != 1)
                     {
-                        stalagDistance = Random.Range((platformWidths[platformSelector] / 8), platformWidths[platformSelector]);
+                        //stalagDistance = Random.Range((platformWidths[platformSelector] / 8), platformWidths[platformSelector]);
                         stalagSelector = Random.Range(0, objStalagmite.Length);
+
+                        float spikeXPos = Random.Range(-(platformWidths[platformSelector] / 2f), (platformWidths[platformSelector] / 2f));
+
+                        Vector3 spikePos = new Vector3(spikeXPos, .85f, 0f);
 
                         GameObject newStalag;
                         newStalag = objStalagmite[stalagSelector].GetPooledObj();
-                        newStalag.transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y + 1f, transform.position.z);
+                        newStalag.transform.position = transform.position + spikePos;
                         newStalag.transform.rotation = transform.rotation;
                         newStalag.SetActive(true);
                     }

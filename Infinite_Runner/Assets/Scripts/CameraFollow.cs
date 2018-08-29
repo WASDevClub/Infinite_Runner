@@ -8,10 +8,10 @@ public class CameraFollow : MonoBehaviour {
     private Vector3 lastPlayerPos;
     private float distanceToMove;
 
-    public float xMin;
-    public float xMax;
-    public float yMin;
-    public float yMax;
+    //public float xMin;
+    //public float xMax;
+    //public float yMin;
+    //public float yMax;
 
 
     // Use this for initialization

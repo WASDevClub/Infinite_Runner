@@ -7,8 +7,7 @@ TagManager:
   - Ground
   - ShowOnPause
   - Berry
-  - Stalagmite
-  - Stalactite
+  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -116,13 +116,13 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-    //void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    if (other.collider.tag == "Ground")
-    //    {
-    //        isGrounded = true;
-    //    }
-    //}
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.tag == "Obstacle")
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+    }
 
     //void OnCollisionStay2D(Collision2D other)
     //{
