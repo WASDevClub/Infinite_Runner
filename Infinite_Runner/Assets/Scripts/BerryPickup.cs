@@ -10,12 +10,16 @@ public class BerryPickup : MonoBehaviour {
 
     // SCOREMANAGER OBJECT FOR REFERENCE
     private ScoreManager theScoreManager;
-    
+
+    private AudioSource coinSound;
+
 
     // Use this for initialization
     void Start()
     {
         theScoreManager = FindObjectOfType<ScoreManager>();
+
+        coinSound = GameObject.Find("coinSound").GetComponent<AudioSource>();
     }
 
    
@@ -26,6 +30,14 @@ public class BerryPickup : MonoBehaviour {
         {
             theScoreManager.AddScore(scoreToGive); // ADDS SCORE
             gameObject.SetActive(false); //DEACTIVATING BERRY WHEN PICKED UP
+
+            if (coinSound.isPlaying)
+            {
+                coinSound.Stop();
+                coinSound.Play();
+            }
+            else
+                coinSound.Play();
         }
         
     }

@@ -13,6 +13,11 @@ public class PlayerScript : MonoBehaviour {
     public float jumpTime;
     private float jumpTimeCounter;
 
+    //Keeps 
+    private bool stoppedJumping;
+
+    private bool canDoubleJump;
+
     //Collision with side of platform
     public bool grounded;
     public LayerMask whatIsGround;
@@ -30,6 +35,9 @@ public class PlayerScript : MonoBehaviour {
 
     private GameManager gm;
 
+    public AudioSource jumpSound;
+    public AudioSource deathSound;
+
     // Use this for initialization
     void Start()
     {
@@ -40,6 +48,10 @@ public class PlayerScript : MonoBehaviour {
 
         speedMilestonCount = speedIncreaseMilestone; //Making sure the count starts are the 100 mark, instead of starting at 0. 
         //Gives player a chance to get grounding before speeding up
+
+        stoppedJumping = true;
+
+        canDoubleJump = true;
     }
 
     void Update()
@@ -74,6 +86,8 @@ public class PlayerScript : MonoBehaviour {
         if(myRigidBody.position.y < -6.75)
         {
             FindObjectOfType<GameManager>().EndGame();
+
+            deathSound.Play();
         }
 
     }
@@ -91,12 +105,26 @@ public class PlayerScript : MonoBehaviour {
         {
             if (grounded)
             {
-                //myRigidBody.AddForce(Vector3.up * (jumpPower * myRigidBody.mass * myRigidBody.gravityScale * 15));
                 myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpPower);
+
+                stoppedJumping = false;
+                jumpSound.Play();
+            }
+            if (!grounded && canDoubleJump == true)
+            {
+                myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpPower);
+
+                canDoubleJump = false;
+
+                stoppedJumping = false;
+
+                jumpTimeCounter = jumpTime;
+
+                jumpSound.Play();
             }
         }
 
-        if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
+        if ((Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)) && stoppedJumping == false)
         {
             if(jumpTimeCounter > 0)
             {
@@ -108,11 +136,15 @@ public class PlayerScript : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0))
         {
             jumpTimeCounter = 0;
+
+            stoppedJumping = true;
         }
 
         if (grounded)
         {
             jumpTimeCounter = jumpTime;
+
+            canDoubleJump = true;
         }
     }
 
@@ -121,6 +153,8 @@ public class PlayerScript : MonoBehaviour {
         if (other.collider.tag == "Obstacle")
         {
             FindObjectOfType<GameManager>().EndGame();
+
+            deathSound.Play();
         }
     }
 
