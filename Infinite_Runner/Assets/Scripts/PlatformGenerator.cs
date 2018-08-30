@@ -130,7 +130,6 @@ public class PlatformGenerator : MonoBehaviour {
                 {
                     if (i == randNum && platformSelector != 0 && platformSelector != 1)
                     {
-                        //stalagDistance = Random.Range((platformWidths[platformSelector] / 8), platformWidths[platformSelector]);
                         stalagSelector = Random.Range(0, objStalagmite.Length);
 
                         float spikeXPos = Random.Range(-(platformWidths[platformSelector] / 2f), (platformWidths[platformSelector] / 2f));

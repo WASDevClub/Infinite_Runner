@@ -51,13 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AudioScript.cs" />
-     <Compile Include="Assets\PickUpBerries.cs" />
+     <Compile Include="Assets\Scripts\AudioScript.cs" />
      <Compile Include="Assets\Scripts\BerryGenerator.cs" />
      <Compile Include="Assets\Scripts\BerryPickup.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CeilingGenerator.cs" />
      <Compile Include="Assets\Scripts\ObjectPooler.cs" />
+     <Compile Include="Assets\Scripts\PickUpBerries.cs" />
      <Compile Include="Assets\Scripts\PlatformDestroyer.cs" />
      <Compile Include="Assets\Scripts\PlatformGenerator.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
