@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour {
 
+    //Animation
+    private Animator myAnimator;
+
+
     //JUMPING
     public float jumpPower = 3.0f;
     public float speedMultiplier;
@@ -52,6 +56,9 @@ public class PlayerScript : MonoBehaviour {
         stoppedJumping = true;
 
         canDoubleJump = true;
+
+        // Finding animator attached to the player
+        myAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -59,7 +66,6 @@ public class PlayerScript : MonoBehaviour {
         //grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
 
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-
 
         //Checking to see when the player gets above the count number
         if(transform.position.x > speedMilestonCount)
@@ -70,14 +76,16 @@ public class PlayerScript : MonoBehaviour {
 
             movementSpeed = movementSpeed * speedMultiplier; //Changing the movement speed
         }
+
+        myAnimator.SetFloat("Speed", myRigidBody.velocity.x);
+        myAnimator.SetBool("Grounded", grounded);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
 
-        //float horizontal = Input.GetAxis("Horizontal");
-
+        
         //HandleMovement(horizontal);
         myRigidBody.velocity = new Vector2(movementSpeed, myRigidBody.velocity.y);
         PlayerJump();
@@ -92,12 +100,7 @@ public class PlayerScript : MonoBehaviour {
 
     }
 
-    ////Horizantal movement
-    //private void HandleMovement(float horizontal)
-    //{
-    //    myRigidBody.velocity =  new Vector2(horizontal * movementSpeed, myRigidBody.velocity.y);
-    //}
-
+    
     private void PlayerJump()
     {
         //Jump
